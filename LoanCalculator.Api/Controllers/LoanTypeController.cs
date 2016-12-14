@@ -25,10 +25,16 @@ namespace LoanCalculator.Api.Controllers
 
         [Route("CalculatePaymentPlan")]
         [HttpGet]
-        public double CalculatePaymentPlan(Guid loanTypeId, double loanAmount, int yearCount)
+        public IEnumerable<PaymentPlanItemModel> CalculatePaymentPlan(Guid loanTypeId, double loanAmount, int yearCount)
         {
             return ServiceProvider.GetService<LoanTypeService>()
-                .CalculatePaymentPlan(loanTypeId, loanAmount, yearCount);
+                .CalculatePaymentPlan(loanTypeId, loanAmount, yearCount)
+                .Select(p => new PaymentPlanItemModel()
+                {
+                    Amortization = p.Amortization,
+                    Interest = p.Interest,
+                    MonthNumber = p.MonthNumber
+                });
         }
     }
 }

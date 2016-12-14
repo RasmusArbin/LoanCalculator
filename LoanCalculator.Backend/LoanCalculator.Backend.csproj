@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\LoanTypeBO.cs" />
+    <Compile Include="General\PaymentPlanItem.cs" />
     <Compile Include="Interfaces\IBaseBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\LoanCalculatorServiceProvider.cs" />
