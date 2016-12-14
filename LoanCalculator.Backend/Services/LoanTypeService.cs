@@ -19,10 +19,7 @@ namespace LoanCalculator.Backend.Services
         {
             return new List<LoanTypeBO>()
             {
-                _loanType, new LoanTypeBO()
-                {
-                    Guid = new Guid()
-                }
+                _loanType
             };
         }
 
