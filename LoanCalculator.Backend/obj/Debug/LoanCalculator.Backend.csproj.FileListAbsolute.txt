@@ -2,3 +2,4 @@ C:\Projects\LoanCalculator\LoanCalculator\LoanCalculator.Backend\bin\Debug\LoanC
 C:\Projects\LoanCalculator\LoanCalculator\LoanCalculator.Backend\bin\Debug\LoanCalculator.Backend.pdb
 C:\Projects\LoanCalculator\LoanCalculator\LoanCalculator.Backend\obj\Debug\LoanCalculator.Backend.dll
 C:\Projects\LoanCalculator\LoanCalculator\LoanCalculator.Backend\obj\Debug\LoanCalculator.Backend.pdb
+C:\Projects\LoanCalculator\LoanCalculator\LoanCalculator.Backend\obj\Debug\LoanCalculator.Backend.csprojResolveAssemblyReference.cache

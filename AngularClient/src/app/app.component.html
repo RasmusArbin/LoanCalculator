@@ -1,0 +1,9 @@
+<h1>
+  Calculate monthly payback plan
+</h1>
+
+<select [(ngModel)]="selectedLoanTypeId">
+  <option *ngFor="let item of loanTypes" [value]="item.id">{{ item.name }}</option>
+</select>
+
+<button (click)="calculate()">Calculate</button>
