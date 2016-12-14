@@ -4,3 +4,5 @@
 
 /LoanCalculator.Api/obj/Debug
 /LoanCalculator.Api/bin
+/LoanCalculator.Backend/bin
+/LoanCalculator.Backend/obj/Debug
