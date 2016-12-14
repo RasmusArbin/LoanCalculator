@@ -1,4 +1,4 @@
-﻿namespace LoanCalculator.Api.Services
+﻿namespace LoanCalculator.Backend.Services
 {
     public class LoanCalculatorService
     {

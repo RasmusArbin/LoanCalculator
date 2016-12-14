@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using LoanCalculator.Api.Services;
+using LoanCalculator.Backend.Services;
 
-namespace LoanCalculator.Api.Providers
+namespace LoanCalculator.Backend.Providers
 {
     public class LoanCalculatorServiceProvider: LoanCalculatorService
     {
