@@ -2,8 +2,34 @@
   Calculate monthly payback plan
 </h1>
 
+<span>Loan type:</span>
 <select [(ngModel)]="selectedLoanTypeId">
-  <option *ngFor="let item of loanTypes" [value]="item.id">{{ item.name }}</option>
+  <option *ngFor="let loanType of loanTypes" [value]="loanType.id">{{ loanType.name }}</option>
 </select>
 
+<span>Year count:</span>
+<input [(ngModel)]="yearCount" />
+
+<span>Loan amount:</span>
+<input [(ngModel)]="loanAmount" />
+
 <button (click)="calculate()">Calculate</button>
+
+<table *ngIf="paymentPlans">
+  <thead>
+    <tr>
+      <th>Month number</th>
+      <th>Amortization</th>
+      <th>Interest</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let plan of paymentPlans">
+      <td>{{ plan.monthNumber }}</td>
+      <td>{{ plan.amortization }}</td>
+      <td>{{ plan.interest }}</td>
+      <td>{{ plan.amortization + plan.interest }}</td>
+    </tr>
+  </tbody>
+</table>

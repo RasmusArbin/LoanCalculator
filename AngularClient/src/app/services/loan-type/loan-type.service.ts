@@ -19,4 +19,8 @@ export class LoanTypeService {
     return this.http.get(this.configuration.apiPath + this.url);
   }
 
+  public calculatePaymentPlan(loanTypeId: string, loanAmount: number, yearCount: number){
+    return this.http.get(this.configuration.apiPath + this.url + "/CalculatePaymentPlan?loanTypeId=" + loanTypeId + "&loanAmount=" + loanAmount + "&yearCount=" + yearCount);
+  }
+
 }
