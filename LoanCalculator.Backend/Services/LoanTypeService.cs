@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using LoanCalculator.Backend.BO;
+using LoanCalculator.Backend.Enums;
 using LoanCalculator.Backend.General;
 
 namespace LoanCalculator.Backend.Services
@@ -11,7 +12,7 @@ namespace LoanCalculator.Backend.Services
         {
             new LoanTypeBO()
             {
-                LoanTypeId = 1,
+                LoanTypeId = (int) LoneTypeEnum.HouseLone,
                 Guid = Guid.NewGuid(),
                 Name = "Huslån",
                 Percent = 3.5,
@@ -33,15 +34,16 @@ namespace LoanCalculator.Backend.Services
         {
             LoanTypeBO loanType = GetByGuid(loanTypeGuid);
 
+            double copiedLoanAmount = loanAmount;
             int monthCount = GetMonth(yearCount);
 
             List<PaymentPlanItem> paymentPlanItems = new List<PaymentPlanItem>();
             
-            double amortization = loanAmount / monthCount;
             for (int i = 0; i < monthCount; i++)
             {
-                double interest = loanAmount * loanType.Percent / 100 / 12;
-                loanAmount -= amortization;
+                double amortization = GetAmortization(loanType.LoanTypeId, loanAmount, monthCount, i + 1);
+                double interest = copiedLoanAmount * loanType.Percent / 100 / 12;
+                copiedLoanAmount -= amortization;
                 paymentPlanItems.Add(new PaymentPlanItem()
                 {
                     MonthNumber = i + 1,
@@ -56,6 +58,18 @@ namespace LoanCalculator.Backend.Services
         private int GetMonth(int years)
         {
             return years*12;
+        }
+
+        private double GetAmortization(int loneTypeId, double totalamount, int monthCount, int currentMonth)
+        {
+            double amortization = 0;
+            switch ((LoneTypeEnum) loneTypeId)
+            {
+                case LoneTypeEnum.HouseLone:
+                    amortization = totalamount/monthCount;
+                    break;
+            }
+            return amortization;
         }
     }
 }
