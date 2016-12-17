@@ -12,7 +12,7 @@ namespace LoanCalculator.Backend.Services
         {
             new LoanTypeBO()
             {
-                LoanTypeId = (int) LoneTypeEnum.HouseLone,
+                LoanTypeId = (int) LoanTypeEnum.HouseLoan,
                 Guid = Guid.NewGuid(),
                 Name = "Huslån",
                 Percent = 3.5,
@@ -60,12 +60,12 @@ namespace LoanCalculator.Backend.Services
             return years*12;
         }
 
-        private double GetAmortization(int loneTypeId, double totalamount, int monthCount, int currentMonth)
+        private double GetAmortization(int loanTypeId, double totalamount, int monthCount, int currentMonth)
         {
             double amortization = 0;
-            switch ((LoneTypeEnum) loneTypeId)
+            switch ((LoanTypeEnum) loanTypeId)
             {
-                case LoneTypeEnum.HouseLone:
+                case LoanTypeEnum.HouseLoan:
                     amortization = totalamount/monthCount;
                     break;
             }

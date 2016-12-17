@@ -1,7 +1,7 @@
 ﻿namespace LoanCalculator.Backend.Enums
 {
-    public enum LoneTypeEnum
+    public enum LoanTypeEnum
     {
-        HouseLone = 1
+        HouseLoan = 1
     }
 }
