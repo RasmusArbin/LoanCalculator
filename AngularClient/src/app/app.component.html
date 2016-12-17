@@ -2,39 +2,51 @@
   Calculate monthly payback plan
 </h1>
 
-<span>Loan type:</span>
-<select [(ngModel)]="selectedLoanTypeId">
-  <option *ngFor="let loanType of loanTypes" [value]="loanType.id">{{ loanType.name }}</option>
-</select>
+<form (ngSubmit)="calculate()">
+  <div class="form-group">
+    <label for="loantype">Loan type</label>
+    <select required class="form-control" id="loanType" name="loanType" [(ngModel)]="selectedLoanTypeId">
+      <option *ngFor="let loanType of loanTypes" [value]="loanType.id">{{ loanType.name }}</option>
+    </select>
+  </div>
 
-<span>Payment scheme types:</span>
-<select [(ngModel)]="selectedPaymentSchemeTypeId">
-  <option *ngFor="let paymentSchemeType of paymentSchemeTypes" [value]="paymentSchemeType.id">{{ paymentSchemeType.name }}</option>
-</select>
+  <div class="form-group">
+    <label for="paymentSchemeType">Payment scheme</label>
+    <select required class="form-control" id="paymentSchemeType" name="paymentSchemeType" [(ngModel)]="selectedPaymentSchemeTypeId">
+      <option *ngFor="let paymentSchemeType of paymentSchemeTypes" [value]="paymentSchemeType.id">{{ paymentSchemeType.name }}</option>
+    </select>
+  </div>
 
-<span>Year count:</span>
-<input [(ngModel)]="yearCount" />
+  <div class="form-group">
+    <label for="yearCount">Year count</label>
+    <input required class="form-control" id="yearCount" name="yearCount" [(ngModel)]="yearCount" />
+  </div>
 
-<span>Loan amount:</span>
-<input [(ngModel)]="loanAmount" />
+  <div class="form-group">
+    <label for="loanAmount">Loan amount</label>
+    <input required class="form-control" id="loanAmount" name="loanAmount" [(ngModel)]="loanAmount" />
+  </div>
 
-<button (click)="calculate()">Calculate</button>
+  <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
 
-<table *ngIf="paymentPlans">
-  <thead>
-    <tr>
-      <th>Month number</th>
-      <th>Amortization</th>
-      <th>Interest</th>
-      <th>Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let plan of paymentPlans">
-      <td>{{ plan.monthNumber }}</td>
-      <td>{{ plan.amortization }}</td>
-      <td>{{ plan.interest }}</td>
-      <td>{{ plan.amortization + plan.interest }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table" *ngIf="paymentPlans">
+    <thead>
+      <tr>
+        <th>Month number</th>
+        <th>Amortization</th>
+        <th>Interest</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plan of paymentPlans">
+        <td>{{ plan.monthNumber }}</td>
+        <td>{{ plan.amortization }}</td>
+        <td>{{ plan.interest }}</td>
+        <td>{{ plan.amortization + plan.interest }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
