@@ -41,7 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\LoanTypeBO.cs" />
-    <Compile Include="Enums\PaymentSchemeEnum.cs" />
+    <Compile Include="BO\PaymentSchemeTypeBO.cs" />
+    <Compile Include="Enums\PaymentSchemeTypeEnum.cs" />
     <Compile Include="Enums\LoneTypeEnum.cs" />
     <Compile Include="Factories\PaymentSchemeFactory.cs" />
     <Compile Include="General\PaymentPlanItem.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Interfaces\IBaseBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\LoanCalculatorServiceProvider.cs" />
+    <Compile Include="Services\PaymentSchemeTypeService.cs" />
     <Compile Include="Services\LoanTypeService.cs" />
     <Compile Include="Services\LoanCalculatorService.cs" />
   </ItemGroup>

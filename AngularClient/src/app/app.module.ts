@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { LoanTypeService, ConfigurationService } from './services/services';
+import { LoanTypeService, ConfigurationService, PaymentSchemeTypeService } from './services/services';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { LoanTypeService, ConfigurationService } from './services/services';
   ],
   providers: [
     LoanTypeService,
-    ConfigurationService
+    ConfigurationService,
+    PaymentSchemeTypeService
   ],
   bootstrap: [AppComponent]
 })

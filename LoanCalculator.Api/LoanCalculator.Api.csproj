@@ -116,10 +116,12 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\LoanCalculatorApiController.cs" />
+    <Compile Include="Controllers\PaymentSchemeTypeController.cs" />
     <Compile Include="Controllers\LoanTypeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PaymentSchemeTypeModel.cs" />
     <Compile Include="Models\LoanTypeModel.cs" />
     <Compile Include="Models\PaymentPlanItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

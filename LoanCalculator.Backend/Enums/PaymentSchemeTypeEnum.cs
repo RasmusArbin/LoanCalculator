@@ -1,6 +1,6 @@
 ﻿namespace LoanCalculator.Backend.Enums
 {
-    public enum PaymentSchemeEnum
+    public enum PaymentSchemeTypeEnum
     {
         Monthly = 1
     }

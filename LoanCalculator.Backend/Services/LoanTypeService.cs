@@ -32,11 +32,9 @@ namespace LoanCalculator.Backend.Services
             return _loanTypes.Find(lt => lt.Guid == loanTypeGuid);
         }
         
-        public List<PaymentPlanItem> CalculatePaymentPlan(Guid loanTypeGuid, double loanAmount, int yearCount)
+        public List<PaymentPlanItem> CalculatePaymentPlan(LoanTypeBO loanType, PaymentSchemeTypeBO paymentSchemeType, double loanAmount, int yearCount)
         {
-            LoanTypeBO loanType = GetByGuid(loanTypeGuid);
-
-            IPaymentScheme paymentScheme = PaymentSchemeFactory.GetInstance(PaymentSchemeEnum.Monthly);
+            IPaymentScheme paymentScheme = PaymentSchemeFactory.GetInstance((PaymentSchemeTypeEnum) paymentSchemeType.Id);
 
             return paymentScheme.CalculatePaymentPlan(loanType, loanAmount, yearCount);
         }

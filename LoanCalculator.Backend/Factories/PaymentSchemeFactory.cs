@@ -6,12 +6,12 @@ namespace LoanCalculator.Backend.Factories
 {
     public static class PaymentSchemeFactory
     {
-        public static IPaymentScheme GetInstance(PaymentSchemeEnum paymentSchemeId)
+        public static IPaymentScheme GetInstance(PaymentSchemeTypeEnum paymentSchemeId)
         {
             IPaymentScheme paymentScheme = null;
             switch (paymentSchemeId)
             {
-                case PaymentSchemeEnum.Monthly:
+                case PaymentSchemeTypeEnum.Monthly:
                     paymentScheme = new MonthlyPaymentScheme();
                     break;
             }

@@ -11,6 +11,7 @@ namespace LoanCalculator.Api.Controllers
     [RoutePrefix("Api/LoanTypes")]
     public class LoanTypeController: LoanCalculatorApiController
     {
+        private LoanTypeService LoanTypeService => ServiceProvider.GetService<LoanTypeService>();
         [Route("")]
         [HttpGet]
         public IEnumerable<LoanTypeModel> GetAllLoanTypes()
@@ -25,10 +26,13 @@ namespace LoanCalculator.Api.Controllers
 
         [Route("CalculatePaymentPlan")]
         [HttpGet]
-        public IEnumerable<PaymentPlanItemModel> CalculatePaymentPlan(Guid loanTypeId, double loanAmount, int yearCount)
+        public IEnumerable<PaymentPlanItemModel> CalculatePaymentPlan(Guid loanTypeId, Guid paymentSchemeTypeId, double loanAmount, int yearCount)
         {
-            return ServiceProvider.GetService<LoanTypeService>()
-                .CalculatePaymentPlan(loanTypeId, loanAmount, yearCount)
+            LoanTypeBO loanType = LoanTypeService.GetByGuid(loanTypeId);
+            PaymentSchemeTypeBO paymentSchemeType =
+                ServiceProvider.GetService<PaymentSchemeTypeService>().GetByGuid(paymentSchemeTypeId);
+            return LoanTypeService
+                .CalculatePaymentPlan(loanType, paymentSchemeType, loanAmount, yearCount)
                 .Select(p => new PaymentPlanItemModel()
                 {
                     Amortization = p.Amortization,

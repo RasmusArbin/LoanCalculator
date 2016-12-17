@@ -7,6 +7,11 @@
   <option *ngFor="let loanType of loanTypes" [value]="loanType.id">{{ loanType.name }}</option>
 </select>
 
+<span>Payment scheme types:</span>
+<select [(ngModel)]="selectedPaymentSchemeTypeId">
+  <option *ngFor="let paymentSchemeType of paymentSchemeTypes" [value]="paymentSchemeType.id">{{ paymentSchemeType.name }}</option>
+</select>
+
 <span>Year count:</span>
 <input [(ngModel)]="yearCount" />
 
