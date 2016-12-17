@@ -16,7 +16,7 @@ namespace LoanCalculator.Backend.Services
             {
                 LoanTypeId = (int) LoanTypeEnum.HouseLoan,
                 Guid = Guid.NewGuid(),
-                Name = "Huslån",
+                Name = "House loan",
                 Percent = 3.5,
                 Created = DateTime.Now,
                 Modified = DateTime.Now
