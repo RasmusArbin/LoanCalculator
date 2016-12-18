@@ -48,7 +48,7 @@
     <Compile Include="General\LoanCalculatorDbContext.cs" />
     <Compile Include="General\LoanCalculatorDbSet.cs" />
     <Compile Include="General\PaymentPlanItem.cs" />
-    <Compile Include="General\PaymentSchemes\MonthlyPaymentScheme.cs" />
+    <Compile Include="PaymentSchemes\MonthlyPaymentScheme.cs" />
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Interfaces\IDbSet.cs" />
     <Compile Include="Interfaces\IPaymentScheme.cs" />

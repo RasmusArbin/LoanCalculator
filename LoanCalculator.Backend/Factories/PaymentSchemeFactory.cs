@@ -1,6 +1,6 @@
 ﻿using LoanCalculator.Backend.Enums;
-using LoanCalculator.Backend.General.PaymentSchemes;
 using LoanCalculator.Backend.Interfaces;
+using LoanCalculator.Backend.PaymentSchemes;
 
 namespace LoanCalculator.Backend.Factories
 {

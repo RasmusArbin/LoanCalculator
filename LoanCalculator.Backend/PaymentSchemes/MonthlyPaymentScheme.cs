@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using LoanCalculator.Backend.BO;
+using LoanCalculator.Backend.General;
 using LoanCalculator.Backend.Interfaces;
 
-namespace LoanCalculator.Backend.General.PaymentSchemes
+namespace LoanCalculator.Backend.PaymentSchemes
 {
     public class MonthlyPaymentScheme: IPaymentScheme
     {
