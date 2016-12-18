@@ -16,7 +16,7 @@ namespace LoanCalculator.Api.Controllers
         [HttpGet]
         public IEnumerable<LoanTypeModel> GetAllLoanTypes()
         {
-            return ServiceProvider.GetService<LoanTypeService>().GetAllLoanTypes().Select(l => new LoanTypeModel()
+            return ServiceProvider.GetService<LoanTypeService>().GetAll().Select(l => new LoanTypeModel()
             {
                 Id = l.Guid,
                 Name = l.Name,

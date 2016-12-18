@@ -15,7 +15,7 @@ namespace LoanCalculator.Api.Controllers
         {
             return
                 ServiceProvider.GetService<PaymentSchemeTypeService>()
-                    .GetAllPaymentSchemes()
+                    .GetAll()
                     .Select(l => new PaymentSchemeTypeModel()
                     {
                         Id = l.Guid,
