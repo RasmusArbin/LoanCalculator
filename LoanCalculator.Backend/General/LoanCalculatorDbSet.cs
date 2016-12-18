@@ -4,6 +4,11 @@ using LoanCalculator.Backend.Interfaces;
 
 namespace LoanCalculator.Backend.General
 {
+    /// <summary>
+    /// Class to handle a database table.
+    /// 
+    /// NOTE: The structure of this backend is flexible. To use a database just change this implementation and LoanCalculatorDbSet (or the provider)
+    /// </summary>
     public class LoanCalculatorDbSet<T>: IDbSet<T> 
         where T : IBaseBO
     {

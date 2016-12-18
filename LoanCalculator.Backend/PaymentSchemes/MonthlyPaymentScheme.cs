@@ -5,6 +5,9 @@ using LoanCalculator.Backend.Interfaces;
 
 namespace LoanCalculator.Backend.PaymentSchemes
 {
+    /// <summary>
+    /// Implementation of the IPaymentScheme to handle a simple monthly payment plan
+    /// </summary>
     public class MonthlyPaymentScheme: IPaymentScheme
     {
         const int MONTHS_IN_YEAR = 12;

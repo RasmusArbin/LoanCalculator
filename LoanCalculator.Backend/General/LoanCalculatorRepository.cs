@@ -3,6 +3,9 @@ using LoanCalculator.Backend.Interfaces;
 
 namespace LoanCalculator.Backend.General
 {
+    /// <summary>
+    /// Classes to handle CRUD from the database
+    /// </summary>
     public class LoanCalculatorRepository
     {
         

@@ -5,6 +5,9 @@ using LoanCalculator.Backend.Interfaces;
 
 namespace LoanCalculator.Backend.Providers
 {
+    /// <summary>
+    /// This class has the reponsibility to provide the different repositories in the system.
+    /// </summary>
     public class LoanCalculatorRepositoryProvider
     {
         private readonly Dictionary<Type, LoanCalculatorRepository> _repositories;
@@ -12,6 +15,7 @@ namespace LoanCalculator.Backend.Providers
 
         public LoanCalculatorRepositoryProvider()
         {
+            //This can be moved to a frontend in a IOC container
             _dbContext = new LoanCalculatorDbContext();
             _repositories = new Dictionary<Type, LoanCalculatorRepository>();
         }

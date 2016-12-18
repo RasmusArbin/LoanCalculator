@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace LoanCalculator.Backend.Interfaces
 {
+    /// <summary>
+    /// Interfaces to hide the implementation of the db set. 
+    /// This to easy change and have a test db set.
+    /// </summary>
     public interface IDbSet
     {
         

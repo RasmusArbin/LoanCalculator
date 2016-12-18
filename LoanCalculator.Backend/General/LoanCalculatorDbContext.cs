@@ -6,6 +6,11 @@ using LoanCalculator.Backend.Interfaces;
 
 namespace LoanCalculator.Backend.General
 {
+    /// <summary>
+    /// Class to handle the database context. 
+    /// 
+    /// NOTE: The structure of this backend is flexible. To use a database just change this implementation and LoanCalculatorDbSet (or the provider)
+    /// </summary>
     public class LoanCalculatorDbContext: IDbContext
     {
         private static readonly Dictionary<Type, IDbSet> _dbSets;

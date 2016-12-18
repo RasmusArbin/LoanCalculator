@@ -4,6 +4,9 @@ using LoanCalculator.Backend.Services;
 
 namespace LoanCalculator.Backend.Providers
 {
+    /// <summary>
+    /// This class has the reponsibility to provide the different services in the system.
+    /// </summary>
     public class LoanCalculatorServiceProvider: LoanCalculatorService
     {
         private readonly LoanCalculatorRepositoryProvider _repositoryProvider;
