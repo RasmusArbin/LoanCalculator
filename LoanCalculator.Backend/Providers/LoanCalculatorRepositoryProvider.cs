@@ -13,10 +13,9 @@ namespace LoanCalculator.Backend.Providers
         private readonly Dictionary<Type, LoanCalculatorRepository> _repositories;
         private readonly IDbContext _dbContext;
 
-        public LoanCalculatorRepositoryProvider()
+        public LoanCalculatorRepositoryProvider(IDbContext dbContext)
         {
-            //This can be moved to a frontend in a IOC container
-            _dbContext = new LoanCalculatorDbContext();
+            _dbContext = dbContext;
             _repositories = new Dictionary<Type, LoanCalculatorRepository>();
         }
         public LoanCalculatorRepository<T> GetRepository<T>() 

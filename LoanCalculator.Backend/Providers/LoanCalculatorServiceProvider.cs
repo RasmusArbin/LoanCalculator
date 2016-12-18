@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using LoanCalculator.Backend.General;
+using LoanCalculator.Backend.Interfaces;
 using LoanCalculator.Backend.Services;
 
 namespace LoanCalculator.Backend.Providers
@@ -12,10 +14,10 @@ namespace LoanCalculator.Backend.Providers
         private readonly LoanCalculatorRepositoryProvider _repositoryProvider;
         private readonly Dictionary<Type, LoanCalculatorService> _services;
 
-        public LoanCalculatorServiceProvider()
+        public LoanCalculatorServiceProvider(IDbContext dbContext)
         {
             _services = new Dictionary<Type, LoanCalculatorService>();
-            _repositoryProvider = new LoanCalculatorRepositoryProvider();
+            _repositoryProvider = new LoanCalculatorRepositoryProvider(dbContext);
         }
 
         public T GetService<T>()

@@ -53,5 +53,10 @@ namespace LoanCalculator.Backend.General
         {
             return (IDbSet<T>) _dbSets[typeof(T)];
         }
+
+        public void Dispose()
+        {
+            //Implement to close db connection
+        }
     }
 }
