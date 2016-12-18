@@ -9,6 +9,9 @@ using LoanCalculator.Backend.Interfaces;
 
 namespace LoanCalculator.Backend.Services
 {
+    /// <summary>
+    /// Class to handle business logic for loan types and payment plans
+    /// </summary>
     public class LoanTypeService: LoanCalculatorService<LoanTypeBO>
     {
         public LoanTypeBO GetByGuid(Guid loanTypeGuid)

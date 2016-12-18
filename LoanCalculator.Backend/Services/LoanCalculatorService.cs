@@ -7,6 +7,9 @@ using LoanCalculator.Backend.Providers;
 
 namespace LoanCalculator.Backend.Services
 {
+    /// <summary>
+    /// Classes to handle business logic in the application.
+    /// </summary>
     public class LoanCalculatorService
     {
         public LoanCalculatorRepositoryProvider RepositoryProvider;
